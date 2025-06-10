@@ -1,0 +1,33 @@
+2025-06-04 17:16:45,982 - INFO - 日志已设置，日志文件: Logs\risk_assessment_20250604_171645.log
+2025-06-04 17:16:45,982 - INFO - === 开始风险评估 ===
+2025-06-04 17:16:45,985 - INFO - 配置已加载: config/risk_assessment.yml
+2025-06-04 17:16:45,985 - INFO - 加载数据文件: d:\JQB_Model\risk_assessment\data_files\processed\processed_data.csv
+2025-06-04 17:16:46,012 - INFO - 数据已加载并缓存: processed_data, 共 4853 条记录
+2025-06-04 17:16:46,013 - INFO - 数据已加载，共 4853 条记录
+2025-06-04 17:16:46,013 - INFO - 开始计算风险评分...
+2025-06-04 17:16:46,014 - INFO - 风险评分计算完成，共 4853 条记录
+2025-06-04 17:16:46,014 - INFO - 风险评分计算完成
+2025-06-04 17:16:46,020 - ERROR - 风险评估失败: "Column(s) ['claim_count', 'policy_count', 'total_claims', 'total_premium'] do not exist"
+2025-06-04 17:16:46,069 - ERROR - 错误详情: Traceback (most recent call last):
+  File "d:\JQB_Model\risk_assessment\risk_assessment.py", line 79, in main
+    province_analysis = scored_data.groupby('省份').agg({
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\groupby\generic.py", line 1432, in aggregate
+    result = op.agg()
+             ^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\apply.py", line 190, in agg
+    return self.agg_dict_like()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\apply.py", line 423, in agg_dict_like
+    return self.agg_or_apply_dict_like(op_name="agg")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\apply.py", line 1608, in agg_or_apply_dict_like
+    result_index, result_data = self.compute_dict_like(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\apply.py", line 462, in compute_dict_like
+    func = self.normalize_dictlike_arg(op_name, selected_obj, func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\apply.py", line 663, in normalize_dictlike_arg
+    raise KeyError(f"Column(s) {list(cols)} do not exist")
+KeyError: "Column(s) ['claim_count', 'policy_count', 'total_claims', 'total_premium'] do not exist"
+

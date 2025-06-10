@@ -1,0 +1,23 @@
+2025-06-04 17:00:21,076 - INFO - 日志已设置，日志文件: Logs\risk_assessment_20250604_170021.log
+2025-06-04 17:00:21,076 - INFO - === 开始风险评估 ===
+2025-06-04 17:00:21,078 - INFO - 配置已加载: config/risk_assessment.yml
+2025-06-04 17:00:21,079 - INFO - 加载数据文件: d:\JQB_Model\risk_assessment\data_files\processed\processed_data.csv
+2025-06-04 17:00:21,098 - INFO - 数据已加载并缓存: processed_data, 共 4853 条记录
+2025-06-04 17:00:21,098 - INFO - 数据已加载，共 4853 条记录
+2025-06-04 17:00:21,098 - INFO - 开始计算风险评分...
+2025-06-04 17:00:21,101 - INFO - 风险评分计算完成，共 4853 条记录
+2025-06-04 17:00:21,101 - INFO - 风险评分计算完成
+2025-06-04 17:00:21,102 - ERROR - 风险评估失败: "['保单号'] not in index"
+2025-06-04 17:00:21,107 - ERROR - 错误详情: Traceback (most recent call last):
+  File "d:\JQB_Model\risk_assessment\risk_assessment.py", line 76, in main
+    results['新单续保风险分析'] = scored_data[['保单号', '省份', '行业1级', '行业2级', '行业3级', '行业4级', 'risk_score']]
+                                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\indexes\base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Python312\Lib\site-packages\pandas\core\indexes\base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['保单号'] not in index"
+

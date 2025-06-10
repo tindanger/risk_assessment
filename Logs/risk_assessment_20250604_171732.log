@@ -1,0 +1,41 @@
+2025-06-04 17:17:32,886 - INFO - 日志已设置，日志文件: Logs\risk_assessment_20250604_171732.log
+2025-06-04 17:17:32,886 - INFO - === 开始风险评估 ===
+2025-06-04 17:17:32,888 - INFO - 配置已加载: config/risk_assessment.yml
+2025-06-04 17:17:32,890 - INFO - 加载数据文件: d:\JQB_Model\risk_assessment\data_files\processed\processed_data.csv
+2025-06-04 17:17:32,910 - INFO - 数据已加载并缓存: processed_data, 共 4853 条记录
+2025-06-04 17:17:32,910 - INFO - 数据已加载，共 4853 条记录
+2025-06-04 17:17:32,910 - INFO - 开始计算风险评分...
+2025-06-04 17:17:32,913 - ERROR - 风险评分计算失败: Cannot convert non-finite values (NA or inf) to integer
+2025-06-04 17:17:32,913 - ERROR - 风险评估失败: Cannot convert non-finite values (NA or inf) to integer
+2025-06-04 17:17:32,926 - ERROR - 错误详情: Traceback (most recent call last):
+  File "d:\JQB_Model\risk_assessment\risk_assessment.py", line 69, in main
+    scored_data = risk_calculator.calculate_scores(data)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\JQB_Model\risk_assessment\modules\calculators\risk_calculator.py", line 85, in calculate_scores
+    result['risk_score'] = result['risk_score'].round().astype(int)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\generic.py", line 6643, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\internals\managers.py", line 430, in astype
+    return self.apply(
+           ^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\internals\managers.py", line 363, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\internals\blocks.py", line 758, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\dtypes\astype.py", line 237, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\dtypes\astype.py", line 182, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\dtypes\astype.py", line 101, in _astype_nansafe
+    return _astype_float_to_int_nansafe(arr, dtype, copy)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\pandas\core\dtypes\astype.py", line 145, in _astype_float_to_int_nansafe
+    raise IntCastingNaNError(
+pandas.errors.IntCastingNaNError: Cannot convert non-finite values (NA or inf) to integer
+

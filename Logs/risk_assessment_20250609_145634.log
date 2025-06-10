@@ -1,0 +1,14 @@
+2025-06-09 14:56:34,582 - INFO - 日志已设置，日志文件: Logs\risk_assessment_20250609_145634.log
+2025-06-09 14:56:34,583 - INFO - === 开始风险评估 ===
+2025-06-09 14:56:34,587 - INFO - 配置已加载: config/risk_assessment.yml
+2025-06-09 14:56:34,588 - INFO - 找到最新处理后数据文件: d:\JQB_Model\risk_assessment\data_files\processed\processed_data.csv
+2025-06-09 14:56:34,589 - INFO - 加载数据文件: d:\JQB_Model\risk_assessment\data_files\processed\processed_data.csv
+2025-06-09 14:56:34,613 - INFO - 数据已加载并缓存: processed_data, 共 4853 条记录
+2025-06-09 14:56:34,614 - INFO - 数据已加载，共 4853 条记录
+2025-06-09 14:56:34,614 - INFO - 开始计算风险评分...
+2025-06-09 14:56:34,623 - INFO - 风险评分计算完成，共 4853 条记录
+2025-06-09 14:56:34,623 - INFO - 风险评分计算完成
+2025-06-09 14:56:34,799 - INFO - 结果已保存: d:\JQB_Model\risk_assessment\output\分析结果_20250609_145634\新单续保+伤残+行业2级+城市分析.xlsx
+2025-06-09 14:56:34,822 - INFO - 结果已导出为固定路径JSON文件: d:\JQB_Model\risk_assessment\risk_score\last_risk_score.json
+2025-06-09 14:56:34,822 - INFO - 结果已保存到 d:\JQB_Model\risk_assessment\output
+2025-06-09 14:56:34,822 - INFO - === 风险评估完成 ===
